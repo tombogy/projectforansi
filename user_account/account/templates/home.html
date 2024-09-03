@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+        .header-left h2, .header-left p {
+            margin: 0;
+            margin-right: 20px;
+        }
+        .header-right a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .header-right a:hover {
+            background-color: #45a049;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #f1f1f1;
+            padding: 20px;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+        .sidebar h3 {
+            margin-top: 0;
+        }
+        .sidebar a {
+            display: block;
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #4CAF50;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .sidebar a:hover {
+            background-color: #45a049;
+        }
+        .main-content {
+            flex: 1;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-left">
+                <h2>Admin Home</h2>
+                <p>Welcome, {{ request.user.username }}</p>
+            </div>
+        </div>
+        <div class="header-right" align="right">
+            <a href="{% url 'login' %}">LOG-OUT</a>
+        </div>
+        
+        <div style="display: flex;">
+            <div class="sidebar">
+                <h3>Admin Add Functions</h3>
+                <a href="{% url 'home2' %}">trail</a>
+                <br>
+                <a href="{% url 'add_d' %}">MANAGE DRIVER</a>
+                <BR>
+                <a href="{% url 'category' %}">MANAGE CATEGORY</a>
+                <BR>
+                <a href="{% url 'vehicle' %}">MANAGE VEHICLE </a>
+                <BR>
+                <a href="{% url 'trip' %}">MANAGE TRIP</a>
+                <br>
+                <a href="{% url 'point' %}">MANAGE CREDIT POINT </a>
+                <br>
+                <a href="{% url 'password' %}">UPDATE PASSWORD</a>
+                
+            </div>  
+        </div>
+    </div>
+</body>
+</html>

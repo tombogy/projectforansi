@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #e0f7fa, #e0e0e0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            width: 100%;
+        }
+        h3 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        label {
+            font-size: 14px;
+            color: #333;
+        }
+        input[type="text"], input[type="email"], input[type="tel"], input[type="password"], input[type="file"], input[type="date"], select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .btn {
+            padding: 10px 20px;
+            background: #03a9f4;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
+        }
+        .btn:hover {
+            background: #0288d1;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h3>Trip Registration Form</h3>
+    <form name="registration" action="registration" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <input type="text" name="Trip From (Source)" placeholder="Trip From (Source)" required>
+        <input type="text" name="Trip To (Destination)" placeholder="Trip To (Destination)" required>
+        <input type="text" name="Meter Reading (Before)" placeholder="Meter Reading (Before)" required>
+        <input type="text" name="Meter Reading(After)" placeholder="Meter Reading(After)" required>
+        <input type="text" name="Filled Fule (In Litters)" placeholder="Filled Fule (In Litters)" required>
+        <input type="tel" name="Creadit point " placeholder="Creadit point" required>
+        <label>Trip mode :</label>
+        <select>
+            <option value="" disabled selected>select</option>
+            <option value="Load">Load</option>
+            <option value="Empty">Empty</option>
+            <option value="Others">Others</option>
+        </select>
+        <label>Invoice Document :</label>
+        <input type="file" name="photo" accept="image/*" required>
+        <input type="text" name="Note" placeholder="Note About The Trip" required>
+        <label>Status Update :</label>
+        <select>
+            <option value="" disabled selected>Current status</option>
+            <option value="start">Trip Start From Godown</option>
+            <option value="reachD">Reach Destination</option>
+            <option value="pick">Pick Up (Product)</option>
+            <option value="starts">Pick Up And Start Trip</option>
+            <option value="reachG">Reach Godown</option>
+            <option value="problem">Problem </option>
+            <option value="ongoing">Trip OnGoing </option>
+        </select>
+        <input type="text" name="loation" placeholder="Copy The Current location" required>
+        <label>Report Date :</label>
+        <input type="date" name="time" placeholder="" required>
+        <label>Report Time :</label>
+        <input type="time" name="time" placeholder="" required>
+        <br>
+        <br>
+        <label>Trip Start Date :</label>
+        <input type="date" name="startD" placeholder="" required>
+        <label>Trip End Date :</label>
+        <input type="date" name="endD" placeholder="" required>
+        <input type="text" name="" placeholder="Category name" required>
+        <label>Truck Weight (Before Load) :</label>
+        <input type="file" name="photo" accept="image/*" required>
+        <label>Truck Weight (Aftre Load) :</label>
+        <input type="file" name="photo" accept="image/*" required>
+        <label>Truck Weight (After Reach Godown) :</label>
+        <input type="file" name="photo" accept="image/*" required>
+        <button type="submit" class="btn">Submit</button>
+    
+    </form>
+</div>
+</body>
+</html>
+
+  
